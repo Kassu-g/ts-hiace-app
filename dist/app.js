@@ -31,7 +31,6 @@ var boat = {
 console.log("Car instance:", car);
 console.log("Plane instance:", plane);
 console.log("Boat instance:", boat);
-// 4. Generic VehicleService
 var VehicleService = /** @class */ (function () {
     function VehicleService() {
         this.items = [];
@@ -44,9 +43,9 @@ var VehicleService = /** @class */ (function () {
     };
     return VehicleService;
 }());
-var cars = new VehicleService();
-var boats = new VehicleService();
-cars.add(car);
-boats.add(boat);
-console.log("Cars in service:", cars.list());
-console.log("Boats in service:", boats.list());
+var auto = new VehicleService();
+var vene = new VehicleService();
+auto.add(car);
+vene.add(boat);
+console.log("Cars in service:", auto.list());
+console.log("Boats in service:", vene.list());

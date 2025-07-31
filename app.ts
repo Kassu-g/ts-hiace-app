@@ -1,33 +1,27 @@
 console.log("Hello World!");
-
 type TVehicle = {
   model: string;
   color: string;
   year: number;
   power: number;
 };
-
 const vehicle: TVehicle = {
   model: "Boring generic vehicle",
   color: "Red",
   year: 1993,
   power: 60
 };
-
 console.log("Generic vehicle:", vehicle);
-
 interface IVehicle {
   model: string;
   color: string;
   year: number;
   power: number;
 }
-
 interface ICar extends IVehicle {
   bodyType: string;
   wheelCount: number;
 }
-
 interface IBoat extends IVehicle {
   draft: number;
 }
@@ -44,7 +38,6 @@ const car: ICar = {
   bodyType: "Hatchback",
   wheelCount: 4
 };
-
 const plane: IPlane = {
   model: "Boeing 777",
   color: "White",
@@ -52,7 +45,6 @@ const plane: IPlane = {
   power: 170000,
   wingspan: 65
 };
-
 const boat: IBoat = {
   model: "Bella",
   color: "Black",
@@ -60,12 +52,10 @@ const boat: IBoat = {
   power: 100,
   draft: 0.42
 };
-
 console.log("Car instance:", car);
 console.log("Plane instance:", plane);
 console.log("Boat instance:", boat);
 
-// 4. Generic VehicleService
 class VehicleService<T> {
   private items: T[] = [];
 
@@ -78,11 +68,9 @@ class VehicleService<T> {
   }
 }
 
-const cars = new VehicleService<ICar>();
-const boats = new VehicleService<IBoat>();
-
-cars.add(car);
-boats.add(boat);
-
-console.log("Cars in service:", cars.list());
-console.log("Boats in service:", boats.list());
+const auto = new VehicleService<ICar>();
+const vene = new VehicleService<IBoat>();
+auto.add(car);
+vene.add(boat);
+console.log("Cars in service:", auto.list());
+console.log("Boats in service:", vene.list());

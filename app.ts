@@ -1,5 +1,4 @@
 console.log("Hello World!");
-
 type TVehicle = {
   model: string;
   color: string;

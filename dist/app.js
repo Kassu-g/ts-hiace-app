@@ -5,7 +5,7 @@ var vehicle = {
     year: 1993,
     power: 60
 };
-console.log("Generic vehicle:", vehicle);
+console.log(vehicle);
 var car = {
     model: "Ford focus",
     color: "Green",
@@ -28,9 +28,9 @@ var boat = {
     power: 100,
     draft: 0.42
 };
-console.log("Car instance:", car);
-console.log("Plane instance:", plane);
-console.log("Boat instance:", boat);
+console.log(car);
+console.log(plane);
+console.log(boat);
 var VehicleService = /** @class */ (function () {
     function VehicleService() {
         this.items = [];
@@ -43,9 +43,9 @@ var VehicleService = /** @class */ (function () {
     };
     return VehicleService;
 }());
-var auto = new VehicleService();
-var vene = new VehicleService();
-auto.add(car);
-vene.add(boat);
-console.log("Cars in service:", auto.list());
-console.log("Boats in service:", vene.list());
+var cars = new VehicleService();
+var boats = new VehicleService();
+cars.add(car);
+boats.add(boat);
+console.log(cars.list());
+console.log(boats.list());
